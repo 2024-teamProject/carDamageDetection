@@ -54,8 +54,8 @@ if os.path.isdir(folder_path):
 input_file = st.selectbox('Select file', options=file_paths)
 
 
-
 model = YOLO(custom_model, device_type)
+
 
 if input_file:
     col_l, col_r = st.columns(2)
@@ -64,3 +64,5 @@ if input_file:
     for result in output_file_preview:
         res = result.save(filename="./result.jpg")
     col_r.image(f'{res}', caption='Predicted')
+
+
