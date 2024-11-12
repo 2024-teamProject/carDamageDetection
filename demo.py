@@ -15,7 +15,7 @@ st.sidebar.title('Option')
 filename_extension = []
 data_type = st.sidebar.radio(
         'Type',
-        ('Image', 'Video', 'Youtube'))
+        ('Image', 'Video', 'Youtube'), disabled=True, index=0)
 if (data_type == 'Image'):
     filename_extension = ['jpg','jpeg','png']
 elif (data_type == 'Video'):
@@ -102,11 +102,11 @@ model = YOLO(custom_model, device_type)
 
 if input_file:
     col_l, col_r = st.columns(2)
-    col_l.image(f'{input_file}', caption='Input original')
+    col_l.image(f'{input_file}', caption='Original')
     output_file_preview = model(input_file)
     for result in output_file_preview:
         res = result.save(filename="./result.jpg")
-    col_r.image(f'{res}', caption='Output expectation')
+    col_r.image(f'{res}', caption='Predicted')
 
 
 st.button('Run', on_click=test_action)
