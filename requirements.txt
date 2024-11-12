@@ -47,4 +47,5 @@ setuptools>=70.0.0 # Snyk vulnerability fix
 # mss  # screenshots
 # albumentations>=1.0.3
 # pycocotools>=2.0.6  # COCO mAP
+opencv-python-headless  #openCv libgl1
 opencv-python-contrib-headless #openCv libglib2.0-0
