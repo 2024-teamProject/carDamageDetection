@@ -53,10 +53,9 @@ if os.path.isdir(folder_path):
             file_paths.append(fp)
 input_file = st.selectbox('Select file', options=file_paths)
 
-print(input_file)
-model = YOLO(custom_model, device_type)
-
 if input_file != None:
+    model = YOLO(custom_model, device_type)
+        
     col_l, col_r = st.columns(2)
     col_l.image(f'{input_file}', caption='Original')
     output_file_preview = model(input_file)
