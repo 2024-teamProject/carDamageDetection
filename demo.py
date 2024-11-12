@@ -43,29 +43,19 @@ def get_bytesio_from_bytes(image_bytes):
 # for err fix
 sys.setrecursionlimit(10**7)
 
-
-folder_path = st.text_input('Input folder path')
-file_paths = []
-if os.path.isdir(folder_path):
-    for fn in os.listdir(folder_path):
-        fp = f'{folder_path}/{fn}'
-        if os.path.isfile(fp):
-            file_paths.append(fp)
-input_file = st.selectbox('Select file', options=file_paths)
-
+# upload img
 uploaded_file = st.file_uploader('Choose Image to upload…', type = (["jpg", "jpeg"]))
-
 if uploaded_file is not None:
     model = YOLO(custom_model, device_type)
+    inputImg = Image.open(uploaded_file)
 
-    img = Image.open(uploaded_file)
-    st.image(img, caption = 'Uploaded image')
-        
-    # col_l, col_r = st.columns(2)
-    # col_l.image(f'{input_file}', caption='Original')
-    # output_file_preview = model(input_file)
-    # for result in output_file_preview:
-    #     res = result.save(filename="./result.jpg")
-    # col_r.image(f'{res}', caption='Predicted')
+    col_l, col_r = st.columns(2)
+    col_l.image(inputImg, caption='Original')
+    outputImg = model(input_file)
+    for result in outputImg:
+        res = result.save(filename="./result.jpg")
+    # inputImg = Image.open(uploaded_file)
+
+    col_r.image(res, caption='Predicted')
 
 
