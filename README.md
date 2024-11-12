@@ -6,7 +6,7 @@
 
 
 #### 주요 기능:
-목적에 맞게 학습된 모델을 이용하여 차량 파손부위 위치 파악
+목적에 맞게 학습된 모델을 이용하여 차량 파손부위의 위치를 파악합니다.
 
 
 #### 사용 모델:
@@ -35,12 +35,24 @@
 
 
 #### 실험:
-- Aihub에 있는 Socar 차량 파손 데이터를 이용하여 초기 모델 세팅
-- 학습율이 오르지 않아 Roboflow에 있는 Socar car damage 2로 데이터셋 변경
-- 100에포크에서 mAP가 증가하는 형태의 그래프가 보이기에 300에포크로 증가시켜 진행
-- 300에서도 성능은 나왔지만 해당 데이터셋이 멀티클래스라 분산된다고 판단해 클래스 하나 제거
-- 3개로 줄인 클래스의 데이터를 가지고 500에포크로 학습시켜 정확도를 크게 높임
-  
+- Aihub에 있는 Socar 차량 파손 데이터를 이용하여 초기 모델을 세팅했습니다.
+- 하지만 학습율이 오르지 않아 Roboflow에 있는 Socar car damage 2로 데이터셋을 변경했습니다.
+- 100에포크에서 mAP가 증가하는 형태의 그래프가 보이기에 300에포크로 증가시켜 진행했습니다.
+- 300에서도 성능은 나왔지만 해당 데이터셋이 멀티클래스라 분산된다고 판단해 클래스를 하나 제거했습니다.
+- 3개로 줄인 클래스의 데이터를 가지고 500에포크로 학습시켜 정확도를 크게 높였습니다.
+
+
+<br/>
+* Labeled
+<img width="450" alt="image" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdrnL23%2FbtsKFgdRf5j%2FnH6YmGXljivxfBtZF4mQ50%2Fimg.png">
+* Predicted
+<img width="450" alt="image" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FmITWz%2FbtsKHwThOXh%2FlVl7aDSzxS13X1zTxyKpsk%2Fimg.png">
+
+<br/>
+* Result
+<img width="800" alt="image" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fv2mo2%2FbtsKHeL44XW%2F0DrGxXEFChLbCd0HQMfajK%2Fimg.png">
+<br/>
+
 
 #### 구현:
 <img width="1436" alt="image" src="https://blog.kakaocdn.net/dn/bjzse7/btsKHp0Ub4A/ReKKTJeOONZbFzSASkVuIk/img.gif">
