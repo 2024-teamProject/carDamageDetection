@@ -55,7 +55,7 @@ input_file = st.selectbox('Select file', options=file_paths)
 
 
 model = YOLO(custom_model, device_type)
-
+print(input_file)
 
 if input_file:
     col_l, col_r = st.columns(2)
