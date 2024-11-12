@@ -54,8 +54,6 @@ if uploaded_file is not None:
     outputImg = model(inputImg)
     for result in outputImg:
         res = result.save(filename="./result.jpg")
-    # inputImg = Image.open(uploaded_file)
-
     col_r.image(res, caption='Predicted')
 
 
