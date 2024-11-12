@@ -55,7 +55,7 @@ input_file = st.selectbox('Select file', options=file_paths)
 
 uploaded_file = st.file_uploader('Choose Image to upload…', type = (["jpg", "jpeg"]))
 
-if input_file is not None:
+if uploaded_file is not None:
     model = YOLO(custom_model, device_type)
 
     img = Image.open(uploaded_file)
