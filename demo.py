@@ -53,14 +53,19 @@ if os.path.isdir(folder_path):
             file_paths.append(fp)
 input_file = st.selectbox('Select file', options=file_paths)
 
-if input_file != None:
+uploaded_file = st.file_uploader('Choose Image to upload…', type = (["jpg", "jpeg"]))
+
+if input_file is not None:
     model = YOLO(custom_model, device_type)
+
+    img = Image.open(uploaded_file)
+    st.image(img, caption = 'Uploaded image')
         
-    col_l, col_r = st.columns(2)
-    col_l.image(f'{input_file}', caption='Original')
-    output_file_preview = model(input_file)
-    for result in output_file_preview:
-        res = result.save(filename="./result.jpg")
-    col_r.image(f'{res}', caption='Predicted')
+    # col_l, col_r = st.columns(2)
+    # col_l.image(f'{input_file}', caption='Original')
+    # output_file_preview = model(input_file)
+    # for result in output_file_preview:
+    #     res = result.save(filename="./result.jpg")
+    # col_r.image(f'{res}', caption='Predicted')
 
 
