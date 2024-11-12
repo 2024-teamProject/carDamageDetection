@@ -14,8 +14,7 @@ st.sidebar.title('Option')
 # left bar menu
 filename_extension = []
 data_type = st.sidebar.radio(
-        'Type',
-        ('Image', 'Video', 'Youtube'), disabled=True, index=0)
+        'Type', 'Image')
 if (data_type == 'Image'):
     filename_extension = ['jpg','jpeg','png']
 elif (data_type == 'Video'):
