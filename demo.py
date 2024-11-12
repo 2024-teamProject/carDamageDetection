@@ -105,28 +105,10 @@ if input_file:
     col_l.image(f'{input_file}', caption='Input original')
     output_file_preview = model(input_file)
     for result in output_file_preview:
-        res = result.save(filename="data/result/result.jpg")
+        res = result.save(filename="./result.jpg")
     col_r.image(f'{res}', caption='Output expectation')
-
-
-
 
 
 st.button('Run', on_click=test_action)
 
 
-# 결과 그래프 생성하고 이동시켜서 보임
-path_res_graph = '/Users/jjnoh/opt/anaconda3/envs/py3.12/streamlit/data/result'
-if st.checkbox('Detail'):
-    if uploaded_file:
-        st.subheader('Detail')
-        st.image(f'{path_res_graph}/graph.jpg')
-    else:
-        st.warning("", icon="⚠️")
-
-
-## !python detect.py --weights yolov5s.pt --source https://www.youtube.com/watch?v=xxxxxxxx
-# miou, boundingbox, counts of class
-
-
-# https://youtu.be/8mf5prrubCM?si=3C1OWtomnG6Ho08L
