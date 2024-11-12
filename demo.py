@@ -51,7 +51,7 @@ if uploaded_file is not None:
 
     col_l, col_r = st.columns(2)
     col_l.image(inputImg, caption='Original')
-    outputImg = model(input_file)
+    outputImg = model(inputImg)
     for result in outputImg:
         res = result.save(filename="./result.jpg")
     # inputImg = Image.open(uploaded_file)
