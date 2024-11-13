@@ -21,10 +21,10 @@ elif (data_type == 'Video'):
     filename_extension = ['mov','mpv','avi', 'mp4']
 model_type = st.sidebar.radio(
         'Model',
-        ('YOLOv5n', 'YOLOv8n'))
-#if (model_type == 'YOLOv5n'):
-#     custom_model = './models/v5_best.pt'
-if (model_type == 'YOLOv8n'):
+        ('YOLOv8n', 'YOLOv8n'))
+if (model_type == 'YOLOv5n'):
+     custom_model = './models/v5_best.pt'
+elif (model_type == 'YOLOv8n'):
     custom_model = './models/v8_best.pt'
 if torch.cuda.is_available():
     device_type = st.sidebar.radio(
